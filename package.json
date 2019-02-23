@@ -1,0 +1,28 @@
+{
+  "name": "node_app_on_docker",
+  "version": "1.0.0",
+  "description": "node app running on a docker container",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./index.js",
+    "start": "node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neyser95/node_app_on_docker.git"
+  },
+  "author": "neyser",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neyser95/node_app_on_docker/issues"
+  },
+  "homepage": "https://github.com/neyser95/node_app_on_docker#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.4.15"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
