@@ -23,5 +23,5 @@ app.use(express.static(path));
 app.use('/', router);
 
 app.listen(PORT, HOST, () => {
-  console.log(`App listening on ${HOST}${port}`);
+  console.log(`App listening on ${HOST}${PORT}`);
 });
