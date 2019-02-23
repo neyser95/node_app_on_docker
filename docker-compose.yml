@@ -1,23 +1,17 @@
-version: "3"
+FROM node: 10-alphine
 
-services: 
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 
-  app:
-    image: node:alpine
-    volumes:
-      - ./:/app
-    working_dir: /app
-    depends_on:
-      - mongo
-    environment:
-      NODE_ENV: development
-    ports:
-      - 3000:3000
-    command: npm run dev
-    
-  mongo:
-      image: mongo
-      expose:
-        - 27017
-      volumes:
-        - ./data/db:/data/db
+WORKDIR /home/node/app
+
+COPY package*.json ./
+
+USER node
+
+RUN npm install
+
+COPY --chown=node:node . .
+
+EXPOSE 8080
+
+CMD [ "node", "index.js" ]
